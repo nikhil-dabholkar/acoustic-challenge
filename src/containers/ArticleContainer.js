@@ -5,6 +5,7 @@ import { switchLanguagePreference } from '../actionCreators/LanguageActions';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { lazy, Suspense } from 'react';
 import { LoadingComponent, LanguageSwitcherComponent } from '../components/index';
+import { ErrorBoundaryWrapper } from '../wrappers/index';
 const ListComponent = lazy(() => import("../components/article/ListComponent"));
 const DetailsComponent = lazy(() => import("../components/article/DetailsComponent"));
 const ErrorComponent = lazy(() => import("../components/shared/ErrorComponent"));
@@ -13,26 +14,28 @@ const ErrorComponent = lazy(() => import("../components/shared/ErrorComponent"))
 function ArticleContainer({ language, switchLanguage, fetchArticle, fetchAllArticles, article }) {
     return (<React.Fragment>
             <LanguageSwitcherComponent availableLanguages={language.allLanguages} selectedLanguage={language.selectedLanguage} switchLanguage={switchLanguage}></LanguageSwitcherComponent>
-            <Router>
-                <Switch>
-                    <Route path="/articles" render={(props) => {
-                        return (<Suspense fallback={<LoadingComponent />}>
-                                    <ListComponent allArticles={article.allArticles} fetchAllArticles={fetchAllArticles} {...props} />
-                                </Suspense>);
-                    }} exact />
-                    <Route path="/articles/:id" render={(props) => {
-                        return (<Suspense fallback={<LoadingComponent />}>
-                                    <DetailsComponent selectedArticle={article.selectedArticle} fetchArticle={fetchArticle} {...props} />
-                                </Suspense>)
-                    }} exact/>
-                    <Route path="/" render={() => <Redirect to="/articles" />} exact></Route>
-                    <Route path="*" render={() => {
-                        return (<Suspense fallback={<LoadingComponent />}>
-                                    <ErrorComponent />
-                                </Suspense>)
-                    }} exact/>
-                </Switch>
-            </Router>
+            <ErrorBoundaryWrapper>
+                <Router>
+                    <Switch>
+                        <Route path="/articles" render={(props) => {
+                            return (<Suspense fallback={<LoadingComponent />}>
+                                        <ListComponent loading={article.loading} error={article.error} allArticles={article.allArticles} fetchAllArticles={fetchAllArticles} {...props} />
+                                    </Suspense>);
+                        }} exact />
+                        <Route path="/articles/:id" render={(props) => {
+                            return (<Suspense fallback={<LoadingComponent />}>
+                                        <DetailsComponent loading={article.loading} error={article.error} selectedArticle={article.selectedArticle} fetchArticle={fetchArticle} {...props} />
+                                    </Suspense>)
+                        }} exact/>
+                        <Route path="/" render={() => <Redirect to="/articles" />} exact></Route>
+                        <Route path="*" render={() => {
+                            return (<Suspense fallback={<LoadingComponent />}>
+                                        <ErrorComponent />
+                                    </Suspense>)
+                        }} exact/>
+                    </Switch>
+                </Router>
+            </ErrorBoundaryWrapper>
         </React.Fragment>
     );
 }
