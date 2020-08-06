@@ -5,11 +5,11 @@ function LanguageSwitcherComponent({availableLanguages, selectedLanguage, switch
     return (<React.Fragment>
         {availableLanguages.map((language) => {
             if (language.locale !== selectedLanguage.locale) {
-                return (<span>
+                return (<span key={language.locale + language.region} >
                     <Link href="#" onClick={() => switchLanguage(language)}>{language.abbr}</Link>
                 </span>)
             }
-            return <span>{language.abbr}</span>
+            return <span key={language.locale + language.region} >{language.abbr}</span>
         })}
     </React.Fragment>);
 }

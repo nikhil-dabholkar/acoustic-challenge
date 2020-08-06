@@ -10,11 +10,11 @@ import { LanguageWrapper, StoreWrapper } from "./wrappers/index";
 
 ReactDOM.render(
   <React.StrictMode>
-    <LanguageWrapper>
-      <StoreWrapper>
+    <StoreWrapper>
+      <LanguageWrapper>
         <App />
-      </StoreWrapper>
-    </LanguageWrapper>
+      </LanguageWrapper>
+    </StoreWrapper>
   </React.StrictMode>,
   document.getElementById('root')
 );
