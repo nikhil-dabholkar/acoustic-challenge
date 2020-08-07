@@ -16,8 +16,7 @@ export default class ErrorBoundaryWrapper extends Component {
     }
     render() {
         if (this.state.hasError) {
-            return (<ToastNotification lowContrast kind='info'
-                caption="00:00:00 AM"
+            return (<ToastNotification lowContrast kind='error'
                 iconDescription="describes the close button"
                 subtitle={<span>Subtitle text goes here. <a href="#example">Example link</a></span>}
                 timeout={0}

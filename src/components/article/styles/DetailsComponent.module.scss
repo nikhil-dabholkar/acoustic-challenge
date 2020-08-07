@@ -1,0 +1,31 @@
+.label {
+    display: inline-block;
+    font-weight: 600;
+    color: #343334;
+    width: 100%;
+    text-align: left;
+    margin: 10px 0px;
+    font-size: 19px;
+}
+.value {
+    display: inline-block;
+    font-weight: 500;
+    color: #343334;
+    width: 100%;
+    text-align: left;
+    margin: 10px 0 20px 10px;
+    font-size: 15px;
+}
+.heading {
+    margin-left: -5px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: 23px;
+}
+.iconSpacing {
+    padding-right: 10px;
+    margin-top: -5px;
+}
+.textForBodySectionParagraph {
+    padding: 0  0 10px 0;
+}
