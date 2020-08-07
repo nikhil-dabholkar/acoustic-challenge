@@ -1,3 +1,20 @@
 {
-    "app.header": "English"
+    "app.header": "English",
+    "detailsComponent.dateTooltip": "Date and time is used when ordering a list of design articles. The time will not display in the website.",
+    "detailsComponent.bodySectionTooltip": "The design topic, when displayed in the website, will interleave the text chunks and images to create a fluid layout.",
+    "detailsComponent.topicTitle": "Topic title",
+    "detailsComponent.authorName": "Author name",
+    "detailsComponent.date": "Date",
+    "detailsComponent.leadImage": "Lead image",
+    "detailsComponent.leadImageCaption": "Lead image caption",
+    "detailsComponent.LeadImageCredit": "Lead image credit",
+    "detailsComponent.profiles": "Profiles",
+    "detailsComponent.lead": "Lead",
+    "detailsComponent.card": "Card",
+    "detailsComponent.default": "Default",
+    "detailsComponent.textForBodySection": "Text for body section",
+    "listComponent.id": "Id",
+    "listComponent.name": "Name",
+    "headerComponent.home": "Home",
+    "headerComponent.articles": "Articles"
 }

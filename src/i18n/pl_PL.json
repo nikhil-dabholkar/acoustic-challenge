@@ -1,3 +1,20 @@
 {
-    "app.header": "Polish"
+    "app.header": "Polish",
+    "detailsComponent.dateTooltip": "Data i czas są używane przy zamawianiu listy artykułów projektowych. Czas nie będzie wyświetlany na stronie internetowej.",
+    "detailsComponent.bodySectionTooltip": "Temat projektu, gdy zostanie wyświetlony na stronie internetowej, będzie przeplatał fragmenty tekstu i obrazy, aby stworzyć płynny układ.",
+    "detailsComponent.topicTitle": "Tytuł wątku",
+    "detailsComponent.authorName": "Imię autora",
+    "detailsComponent.date": "Data",
+    "detailsComponent.leadImage": "Główny obraz",
+    "detailsComponent.leadImageCaption": "Podpis głównego obrazu",
+    "detailsComponent.LeadImageCredit": "Główny kredyt wizerunkowy",
+    "detailsComponent.profiles": "Profile",
+    "detailsComponent.lead": "Prowadzić",
+    "detailsComponent.card": "Karta",
+    "detailsComponent.default": "Domyślna",
+    "detailsComponent.textForBodySection": "Tekst sekcji głównej",
+    "listComponent.id": "ID",
+    "listComponent.name": "Imię",
+    "headerComponent.home": "Dom",
+    "headerComponent.articles": "Artykuły"
 }
