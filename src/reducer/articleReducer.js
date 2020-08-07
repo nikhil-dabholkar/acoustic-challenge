@@ -1,4 +1,4 @@
-import { ERROR_LOAD_DATA, LOAD_ARTICLE_DETAILS_DATA, LOAD_ALL_ARTICLES_DATA, LOADING_DATA } from '../constants/constants';
+import { ERROR_LOAD_DATA, LOAD_ARTICLE_DETAILS_DATA, LOAD_ALL_ARTICLES_DATA, LOADING_DATA, RESET_ERROR } from '../constants/constants';
 
 const initialState = {
     selectedArticle: null,
@@ -16,7 +16,9 @@ function articleReducer(state = initialState, action) {
         case ERROR_LOAD_DATA: 
             return {...state, loading: false, selectedArticle: null, allArticles: null, error: action.payload};
         case LOADING_DATA: 
-            return {...state, loading: true, error: false};
+            return {...state, loading: true, error: null};
+        case RESET_ERROR: 
+            return {...state, loading: false, error: null};
         default: 
             return state;
     }

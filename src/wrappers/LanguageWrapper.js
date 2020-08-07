@@ -4,7 +4,6 @@ import en_US from '../i18n/en_US.json';
 import pl_PL from '../i18n/pl_PL.json';
 import { connect } from 'react-redux';
 function LanguageWrapper({children, language}) {
-    console.log(language);
     let languageMessages = null;
     switch(language.selectedLanguage.label) {
         case 'English':

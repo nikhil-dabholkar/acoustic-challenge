@@ -115,4 +115,4 @@ DetailsComponent.propTypes = {
     intl: PropTypes.object.isRequired
 }
 
-export default injectIntl(DetailsComponent);
+export default injectIntl(React.memo(DetailsComponent));
