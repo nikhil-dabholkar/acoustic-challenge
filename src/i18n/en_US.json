@@ -16,5 +16,6 @@
     "listComponent.id": "Id",
     "listComponent.name": "Name",
     "headerComponent.home": "Home",
-    "headerComponent.articles": "Articles"
+    "headerComponent.articles": "Articles",
+    "errorComponent.default": "Something went wrong, Please try again after sometime."
 }

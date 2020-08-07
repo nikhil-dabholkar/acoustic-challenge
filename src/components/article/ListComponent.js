@@ -50,4 +50,4 @@ ListComponent.propTypes = {
     intl: PropTypes.object.isRequired
 }
 
-export default injectIntl(ListComponent);
+export default injectIntl(React.memo(ListComponent));
