@@ -3,8 +3,12 @@ import { LanguageSwitcherComponent } from "../index";
 import { FormattedMessage } from 'react-intl';
 import { Link } from "react-router-dom";
 import styles from "./styles/HeaderComponent.module.scss";
+import { useLocation, useRouteMatch, useHistory, useParams } from 'react-router-dom'
 
 function HeaderComponent({ language, switchLanguage }) {
+    let location = useLocation();
+
+
     return (<React.Fragment>
         <nav className="navbar navbar-light bg-white">
             <a className="navbar-brand" href="#">
@@ -13,15 +17,11 @@ function HeaderComponent({ language, switchLanguage }) {
             <span className={styles.languageSwitcherContainer}>
                 <LanguageSwitcherComponent availableLanguages={language.allLanguages} selectedLanguage={language.selectedLanguage} switchLanguage={switchLanguage}></LanguageSwitcherComponent>
             </span>
-
         </nav>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
-                    <li className="nav-item active">
-                        {<Link className="nav-link" to={`/`}><FormattedMessage id="headerComponent.home" defaultMessage="Home"></FormattedMessage></Link>}
-                    </li>
-                    <li className="nav-item">
+                    <li className={"nav-item" + (location.pathname === '/articles' || location.pathname.startsWith('/articles/')) ? " active" : ""}>
                         {<Link className="nav-link" to={`/articles`}><FormattedMessage id="headerComponent.articles" defaultMessage="Articles"></FormattedMessage></Link>}
                     </li>
                 </ul>

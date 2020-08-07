@@ -8,15 +8,17 @@ import { Link } from "react-router-dom";
 
 function ListComponent({ fetchAllArticles, allArticles, error, loading, intl }) {
 
-    const [columnDefs] = useState([
-        { headerName: intl.formatMessage({ id: "listComponent.id" }), field: "id", flex: 1 },
-        {
-            headerName: intl.formatMessage({ id: "listComponent.name" }), field: "name", cellRendererFramework: function (params) {
-                return <Link to={`/articles/${params.data.id}`}>{params.value}</Link>
-            }, flex: 1
-        }]
-    );
+    const [columnDefs, setColumnDef] = useState([]);
 
+    useEffect(() => {
+        setColumnDef([
+            { headerName: intl.formatMessage({ id: "listComponent.id" }), field: "id", flex: 1 },
+            {
+                headerName: intl.formatMessage({ id: "listComponent.name" }), field: "name", cellRendererFramework: function (params) {
+                    return <Link to={`/articles/${params.data.id}`}>{params.value}</Link>
+                }, flex: 1
+            }])
+    }, [intl]);
 
     useEffect(() => {
         fetchAllArticles();
