@@ -17,5 +17,6 @@
     "listComponent.name": "Name",
     "headerComponent.home": "Home",
     "headerComponent.articles": "Articles",
-    "errorComponent.default": "Something went wrong, Please try again after sometime."
+    "errorComponent.default": "Something went wrong, Please try again after sometime.",
+    "rootContainer.invalidURL": "The requested URL is invalid please check the URL and retry."
 }

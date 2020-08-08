@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailsComponent Check if matches DetailsComponent Snapshot 1`] = `
+<div
+  data-testid="loadingComponent"
+>
+  <div
+    className="bx--loading-overlay"
+  >
+    <div
+      aria-atomic="true"
+      aria-labelledby="loading-id-4"
+      aria-live="assertive"
+      className="bx--loading"
+    >
+      <label
+        className="bx--visually-hidden"
+        id="loading-id-4"
+      >
+        Active loading indicator
+      </label>
+      <svg
+        className="bx--loading__svg"
+        viewBox="-75 -75 150 150"
+      >
+        <title>
+          Active loading indicator
+        </title>
+        <circle
+          className="bx--loading__stroke"
+          cx="0"
+          cy="0"
+          r="37.5"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
