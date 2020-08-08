@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { switchLanguagePreference } from '../actionCreators/LanguageActions';
-import { HeaderComponent } from '../components/index';
+import { switchLanguagePreference } from '../../actionCreators/LanguageActions';
+import { HeaderComponent } from '../../components/index';
 
 function HeaderContainer({ language, switchLanguage }) {
     return (<React.Fragment>
+        <div data-testid="headerContainer"></div>
         <HeaderComponent language={language} switchLanguage={switchLanguage}></HeaderComponent>
     </React.Fragment>
     );

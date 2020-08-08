@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LanguageSwitcherComponent Check if matches LanguageSwitcherComponent Snapshot 1`] = `
+<div
+  data-testid="languageSwitcherComponent"
+>
+  <span>
+    English
+     | 
+  </span>
+  <span>
+    <a
+      className="bx--link"
+      href="#"
+      onClick={[Function]}
+    >
+      Polish
+    </a>
+    
+  </span>
+</div>
+`;

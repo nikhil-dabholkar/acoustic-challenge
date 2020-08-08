@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ErrorComponent from '../components/shared/ErrorComponent';
+import { ErrorComponent } from '../components/index';
 export default class ErrorBoundaryWrapper extends Component {
     state = {
         error: '',

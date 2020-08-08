@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, FormattedDate, FormattedMessage } from 'react-intl';
-import { LoadingComponent } from '../index';
+import { LoadingComponent } from '../../index';
 import { Tabs, Tab, Tooltip } from 'carbon-components-react';
-import styles from './styles/DetailsComponent.module.scss';
+import styles from './DetailsComponent.module.scss';
 import { Document32 } from '@carbon/icons-react';
 
 function DetailsComponent({ match, fetchArticle, selectedArticle, error, loading, intl }) {
@@ -22,7 +22,7 @@ function DetailsComponent({ match, fetchArticle, selectedArticle, error, loading
             <p>{intl.formatMessage({id: "detailsComponent.bodySectionTooltip"})}</p>
         </Tooltip>;
         return (<React.Fragment>
-            <div className="container">
+            <div data-testid="detailsComponent" className="container">
                 <div className="row">
                     <div className="col">
                         <div className="row">
@@ -112,7 +112,7 @@ function DetailsComponent({ match, fetchArticle, selectedArticle, error, loading
 }
 
 DetailsComponent.propTypes = {
-    intl: PropTypes.object.isRequired
+    //intl: PropTypes.object.isRequired
 }
 
 export default injectIntl(React.memo(DetailsComponent));

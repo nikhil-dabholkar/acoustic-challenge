@@ -17,5 +17,6 @@
     "listComponent.name": "Imię",
     "headerComponent.home": "Dom",
     "headerComponent.articles": "Artykuły",
-    "errorComponent.default": "Coś poszło nie tak. Spróbuj ponownie za jakiś czas."
+    "errorComponent.default": "Coś poszło nie tak. Spróbuj ponownie za jakiś czas.",
+    "rootContainer.invalidURL": "Żądany adres URL jest nieprawidłowy, sprawdź go i spróbuj ponownie."
 }

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, FormattedDate, FormattedMessage } from 'react-intl';
-import { LoadingComponent } from '../index';
+import { LoadingComponent } from '../../index';
 import { AgGridReact } from 'ag-grid-react';
-import styles from './styles/ListComponent.module.scss';
+import styles from './ListComponent.module.scss';
 import { Link } from "react-router-dom";
 
 function ListComponent({ fetchAllArticles, allArticles, error, loading, intl }) {
@@ -28,7 +28,7 @@ function ListComponent({ fetchAllArticles, allArticles, error, loading, intl }) 
         throw error;
     } else if (!error && !loading && allArticles) {
         return (<React.Fragment>
-            <div className="container">
+            <div data-testid="listComponent" className="container">
                 <div className="row">
                     <div className="col">
                         <div className={"ag-theme-alpine " + styles.listComponentContainer + ' ' +  styles.textAlignLeft}>

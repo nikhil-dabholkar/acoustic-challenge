@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleContainer Check if matches ArticleContainer Snapshot 1`] = `
+<div
+  data-testid="articleContainer"
+>
+  <div
+    className="container"
+    data-testid="listComponent"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col"
+      >
+        <div
+          className="ag-theme-alpine listComponentContainer textAlignLeft"
+        >
+          <div
+            style={
+              Object {
+                "height": "100%",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
