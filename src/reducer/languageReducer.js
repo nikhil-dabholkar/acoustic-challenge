@@ -1,5 +1,9 @@
 import { SELECT_LANGUAGE_PREFERENCE } from '../constants/constants';
 
+/**
+ * Stores all the available languages and current selected language
+ */
+
 const initialState = {
     selectedLanguage: {"abbr": "EN", "locale": "en", "label": "English", "region": "US"},
     allLanguages: [{"abbr": "EN", "locale": "en", "label": "English", "region": "US"},{"abbr": "PL", "locale": "pl", "label": "Polish", "region": "PL"}]

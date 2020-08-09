@@ -9,6 +9,9 @@ import { Document32 } from '@carbon/icons-react';
 function DetailsComponent({ match, fetchArticle, selectedArticle, error, loading, intl }) {
 
     useEffect(() => {
+        /**
+         * Calls this action on first time load (componentDidMount)
+         */
         fetchArticle(match.params.id);//'fa9519d5-0363-4b8d-8e1f-627d802c08a8'
     }, []);
 

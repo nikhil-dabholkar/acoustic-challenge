@@ -1,5 +1,9 @@
 import { ERROR_LOAD_DATA, LOAD_ARTICLE_DETAILS_DATA, LOAD_ALL_ARTICLES_DATA, LOADING_DATA, RESET_ERROR } from '../constants/constants';
 
+/**
+ * Stores all the articles and selected article
+ */
+
 const initialState = {
     selectedArticle: {},
     allArticles: [],
