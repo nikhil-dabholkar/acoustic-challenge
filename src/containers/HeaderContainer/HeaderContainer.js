@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { switchLanguagePreference } from '../../actionCreators/LanguageActions';
 import { HeaderComponent } from '../../components/index';
@@ -19,6 +20,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
     switchLanguage: switchLanguagePreference
+}
+
+HeaderContainer.propTypes = {
+    language: PropTypes.object.isRequired,
+    switchLanguage: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(React.memo(HeaderContainer));

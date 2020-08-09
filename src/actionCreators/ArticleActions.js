@@ -23,7 +23,7 @@ export const fetchAllArticlesData = () => {
             const response = await axios.get(`https://run.mocky.io/v3/8421cb68-a9d9-4575-ad5d-b4396c864231/`);
             dispatch({
                 type: LOAD_ALL_ARTICLES_DATA,
-                payload: response.data
+                payload: response.data.data
             })
         } catch(errorObj) {
             errorFetchingData({category: ERROR_LOAD_ALL_ARTICLES_DATA}, dispatch);

@@ -56,4 +56,9 @@ function RootContainer({ intl }) {
     </React.Fragment>
     );
 }
+
+RootContainer.propTypes = {
+    intl: PropTypes.object.isRequired
+}
+
 export default injectIntl(RootContainer);
