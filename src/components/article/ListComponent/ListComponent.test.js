@@ -42,7 +42,7 @@ describe('ListComponent', () => {
         expect(lazyElement).toBeInTheDocument()
     })
 
-    it("Check if matches ListComponent Snapshot", async () => {
+    test("Check if matches ListComponent Snapshot", async () => {
         const route = '/articles';
         const tree = rendererWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><ListComponent fetchAllArticles={fetchAllArticlesData} ></ListComponent></IntlProvider></Provider>, { route }).toJSON();
         expect(tree).toMatchSnapshot();

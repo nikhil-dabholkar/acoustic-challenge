@@ -47,7 +47,11 @@ function ListComponent({ fetchAllArticles, allArticles, error, loading, intl }) 
 }
 
 ListComponent.propTypes = {
-    intl: PropTypes.object.isRequired
+    intl: PropTypes.object.isRequired,
+    fetchAllArticles: PropTypes.func.isRequired,
+    allArticles: PropTypes.object.isRequired,
+    error: PropTypes.object.isRequired,
+    loading: PropTypes.bool.isRequired
 }
 
 export default injectIntl(React.memo(ListComponent));

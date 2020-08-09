@@ -33,42 +33,42 @@ function rendererWithRouter(
 }
 
 describe('HeaderContainer', () => {
-    test('Check if HeaderContainer Renders', async () => {
+    test('Check if HeaderContainer Renders on /home', async () => {
         const route = '/home';
         renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HeaderContainer></HeaderContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("headerContainer")
         expect(lazyElement).toBeInTheDocument()
     })
 
-    test('Check if HeaderContainer Renders', async () => {
+    test('Check if HeaderContainer Renders on /articles', async () => {
         const route = '/articles';
         renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HeaderContainer></HeaderContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("headerContainer")
         expect(lazyElement).toBeInTheDocument()
     })
 
-    test('Check if HeaderContainer Renders', async () => {
+    test('Check if HeaderContainer Renders on /articles/fa9519d5-0363-4b8d-8e1f-627d802c08a8', async () => {
         const route = '/articles/fa9519d5-0363-4b8d-8e1f-627d802c08a8';
         renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HeaderContainer></HeaderContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("headerContainer")
         expect(lazyElement).toBeInTheDocument()
     })
 
-    test('Check if HeaderContainer Renders', async () => {
+    test('Check if HeaderContainer Renders on /articles/invalid_item', async () => {
         const route = '/articles/invalid_item';
         renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HeaderContainer></HeaderContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("headerContainer")
         expect(lazyElement).toBeInTheDocument()
     })
 
-    test('Check if HeaderContainer Renders', async () => {
+    test('Check if HeaderContainer Renders on /', async () => {
         const route = '/';
         renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HeaderContainer></HeaderContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("headerContainer")
         expect(lazyElement).toBeInTheDocument()
     })
 
-    it("Check if matches HeaderContainer Snapshot", async () => {
+    test("Check if matches HeaderContainer Snapshot", async () => {
         const route = '/home';
         const tree = rendererWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HeaderContainer></HeaderContainer></IntlProvider></Provider>, { route }).toJSON();
         expect(tree).toMatchSnapshot();

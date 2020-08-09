@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { LanguageSwitcherComponent } from "../../index";
 import { FormattedMessage } from 'react-intl';
 import { Link } from "react-router-dom";
@@ -34,6 +35,11 @@ function HeaderComponent({ language, switchLanguage }) {
     </React.Fragment>
 
     );
+}
+
+HeaderComponent.propTypes = {
+    language: PropTypes.object.isRequired,
+    switchLanguage: PropTypes.func.isRequired
 }
 
 export default React.memo(HeaderComponent);

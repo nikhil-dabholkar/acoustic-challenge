@@ -112,7 +112,12 @@ function DetailsComponent({ match, fetchArticle, selectedArticle, error, loading
 }
 
 DetailsComponent.propTypes = {
-    //intl: PropTypes.object.isRequired
+    intl: PropTypes.object.isRequired,
+    match: PropTypes.object.isRequired,
+    fetchArticle: PropTypes.func.isRequired,
+    selectedArticle: PropTypes.object.isRequired,
+    error: PropTypes.object.isRequired,
+    loading: PropTypes.bool.isRequired
 }
 
 export default injectIntl(React.memo(DetailsComponent));

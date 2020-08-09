@@ -22,7 +22,8 @@ function ErrorComponent({ error }) {
 }
 
 ErrorComponent.propTypes = {
-    intl: PropTypes.object.isRequired
+    intl: PropTypes.object.isRequired,
+    error: PropTypes.object.isRequired
 }
 
 export default injectIntl(React.memo(ErrorComponent));
