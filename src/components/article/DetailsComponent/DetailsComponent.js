@@ -32,7 +32,7 @@ function DetailsComponent({ match, fetchArticle, selectedArticle, error, loading
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-3">
+                    <div className="col-md-3">
                         <div className="row">
                             <div className={styles.label}><FormattedMessage id="detailsComponent.topicTitle" defaultMessage="Topic title"></FormattedMessage></div>
                             <div className={styles.value}>{selectedArticle.elements.heading.value}</div>
@@ -63,7 +63,7 @@ function DetailsComponent({ match, fetchArticle, selectedArticle, error, loading
                             <div className={styles.value}>{selectedArticle.elements.mainImage.value.leadImageCredit.value}</div>
                         </div>
                     </div>
-                    <div className="col-9">
+                    <div className="col-md-9">
                         <div className="row">
                             <div className={styles.label}><FormattedMessage id="detailsComponent.profiles" defaultMessage="Profiles"></FormattedMessage></div>
                             <div className={styles.value}>
