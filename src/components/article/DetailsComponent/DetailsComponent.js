@@ -14,7 +14,7 @@ function DetailsComponent({ match, fetchArticle, selectedArticle, error, loading
 
     if (error && !loading) {
         throw error;
-    } else if (!error && !loading && selectedArticle) {
+    } else if (!error && !loading && selectedArticle && selectedArticle.id) {
         const tooltipDate = <Tooltip direction="bottom" tabIndex={0} >
             <p>{intl.formatMessage({id: "detailsComponent.dateTooltip"})}</p>
         </Tooltip>;
@@ -115,9 +115,9 @@ DetailsComponent.propTypes = {
     intl: PropTypes.object.isRequired,
     match: PropTypes.object.isRequired,
     fetchArticle: PropTypes.func.isRequired,
-    selectedArticle: PropTypes.object.isRequired,
-    error: PropTypes.object.isRequired,
-    loading: PropTypes.bool.isRequired
+    selectedArticle: PropTypes.object,
+    error: PropTypes.object,
+    loading: PropTypes.bool
 }
 
 export default injectIntl(React.memo(DetailsComponent));

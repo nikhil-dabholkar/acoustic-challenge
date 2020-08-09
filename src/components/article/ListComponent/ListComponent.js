@@ -34,7 +34,7 @@ function ListComponent({ fetchAllArticles, allArticles, error, loading, intl }) 
                         <div className={"ag-theme-alpine " + styles.listComponentContainer + ' ' +  styles.textAlignLeft}>
                             <AgGridReact
                                 columnDefs={columnDefs}
-                                rowData={(allArticles && allArticles.data) ? allArticles.data : []}>
+                                rowData={allArticles}>
                             </AgGridReact>
                         </div>
                     </div>
@@ -49,9 +49,9 @@ function ListComponent({ fetchAllArticles, allArticles, error, loading, intl }) 
 ListComponent.propTypes = {
     intl: PropTypes.object.isRequired,
     fetchAllArticles: PropTypes.func.isRequired,
-    allArticles: PropTypes.object.isRequired,
-    error: PropTypes.object.isRequired,
-    loading: PropTypes.bool.isRequired
+    allArticles: PropTypes.array,
+    error: PropTypes.object,
+    loading: PropTypes.bool
 }
 
 export default injectIntl(React.memo(ListComponent));

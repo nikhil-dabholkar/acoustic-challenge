@@ -22,7 +22,7 @@ function LanguageSwitcherComponent({ availableLanguages, selectedLanguage, switc
 LanguageSwitcherComponent.propTypes = {
     switchLanguage: PropTypes.func.isRequired,
     selectedLanguage: PropTypes.object.isRequired,
-    availableLanguages: PropTypes.object.isRequired
+    availableLanguages: PropTypes.array.isRequired
 }
 
 export default React.memo(LanguageSwitcherComponent);
