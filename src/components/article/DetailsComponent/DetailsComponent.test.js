@@ -35,14 +35,14 @@ function rendererWithRouter(
 }
 
 describe('DetailsComponent', () => {
-    test('Check if DetailsComponent Renders', async () => {
+    test('Check if DetailsComponent Renders on present article', async () => {
         const route = '/articles/fa9519d5-0363-4b8d-8e1f-627d802c08a8';
         renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><ArticleContainer></ArticleContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("detailsComponent")
         expect(lazyElement).toBeInTheDocument()
     })
 
-    it("Check if matches DetailsComponent Snapshot", async () => {
+    test("Check if matches DetailsComponent Snapshot", async () => {
         const route = '/articles/fa9519d5-0363-4b8d-8e1f-627d802c08a8';
         const tree = rendererWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><DetailsComponent fetchArticle={fetchSelectedArticleData} match={{params: {id: 'fa9519d5-0363-4b8d-8e1f-627d802c08a8'}}}></DetailsComponent></IntlProvider></Provider>, { route }).toJSON();
         expect(tree).toMatchSnapshot();

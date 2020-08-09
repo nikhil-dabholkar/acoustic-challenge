@@ -21,4 +21,4 @@ const mapDispatchToProps = {
     switchLanguage: switchLanguagePreference
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(React.memo(HeaderContainer));

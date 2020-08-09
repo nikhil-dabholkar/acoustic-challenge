@@ -10,6 +10,8 @@ import HeaderContainer from '../HeaderContainer/HeaderContainer';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import { ErrorComponent } from "../../components/index";
 
+// const ErrorComponent = lazy(() => import("../../components/shared/ErrorComponent/ErrorComponent"));
+
 function RootContainer({ intl }) {
 
     return (<React.Fragment>
@@ -18,6 +20,7 @@ function RootContainer({ intl }) {
                 <HeaderContainer></HeaderContainer>
                 <Jumbotron fluid>
                     <Switch>
+                        
                         <Route path="/home" render={(props) => {
                             return (<Suspense fallback={<LoadingComponent />}>
                                 <HomeContainer></HomeContainer>
@@ -41,7 +44,7 @@ function RootContainer({ intl }) {
                             }
                             return (
                                 <ErrorComponent error={errorObj} />
-                            )
+                                );
                         }} />
                         <Route path="/" render={() => <Redirect to="/home" />} exact></Route>
                         <Route path="*" render={() => <Redirect to="/404" />}></Route>

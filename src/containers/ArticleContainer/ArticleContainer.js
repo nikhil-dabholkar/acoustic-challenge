@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchSelectedArticleData, fetchAllArticlesData, resetArticlesError } from '../../actionCreators/ArticleActions';
 import { Route, useLocation } from "react-router-dom";
@@ -52,4 +53,11 @@ const mapDispatchToProps = {
     resetError: resetArticlesError
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleContainer);
+ArticleContainer.propTypes = {
+    resetError: PropTypes.func.isRequired,
+    fetchArticle: PropTypes.func.isRequired,
+    fetchAllArticles: PropTypes.func.isRequired,
+    article: PropTypes.object.isRequired
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(React.memo(ArticleContainer));

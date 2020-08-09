@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'carbon-components-react';
 
 function LanguageSwitcherComponent({ availableLanguages, selectedLanguage, switchLanguage }) {
@@ -18,4 +19,10 @@ function LanguageSwitcherComponent({ availableLanguages, selectedLanguage, switc
     </React.Fragment>);
 }
 
-export default LanguageSwitcherComponent;
+LanguageSwitcherComponent.propTypes = {
+    switchLanguage: PropTypes.func.isRequired,
+    selectedLanguage: PropTypes.object.isRequired,
+    availableLanguages: PropTypes.object.isRequired
+}
+
+export default React.memo(LanguageSwitcherComponent);

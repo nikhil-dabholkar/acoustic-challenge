@@ -4,7 +4,7 @@ import RootContainer from '../../../containers/RootContainer/RootContainer';
 import { IntlProvider } from 'react-intl';
 import { store } from "../../../store/store";
 import { Provider } from 'react-redux';
-import { render, cleanup, screen } from '@testing-library/react';
+import { render, cleanup, screen, wait } from '@testing-library/react';
 import "@testing-library/jest-dom/extend-expect";
 import renderer from "react-test-renderer";
 import { Router } from 'react-router-dom'
@@ -12,8 +12,15 @@ import { createMemoryHistory } from 'history'
 import en_US from "../../../i18n/en_US.json";
 import App from '../../../App';
 import TestRenderer from 'react-test-renderer'; // ES6
+import { shallow, render as r1, mount } from 'enzyme';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import ArticleContainer from '../../../containers/ArticleContainer/ArticleContainer';
+ 
+Enzyme.configure({ adapter: new Adapter() });
 
 afterEach(cleanup);
+
 
 function renderWithRouter(
     ui,
@@ -36,23 +43,15 @@ function rendererWithRouter(
 }
 
 describe('ErrorComponent', () => {
-    test('Check if ErrorComponent Renders', async () => {
-        TestRenderer.act(() => {
-            jest.useFakeTimers();
-            const route = '/articles/invalid_route';
-            const { container } = renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><RootContainer></RootContainer></IntlProvider></Provider>, { route })
-            setTimeout(async () => {
-                console.log(container.innerHTML);
-                const lazyElement = await screen.findByTestId("errorComponent")
-                expect(lazyElement).toBeInTheDocument();
-            }, 25);
-            jest.runAllTimers();
-        })
-
+    test('Check if ListComponent Renders on invalid article', async () => {
+        const route = '/articles/invalid_article_id';
+        renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><ArticleContainer></ArticleContainer></IntlProvider></Provider>, { route })
+        const lazyElement = await screen.findByTestId("errorComponent")
+        expect(lazyElement).toBeInTheDocument()
     })
 
-    it("Check if matches ErrorComponent Snapshot", () => {
-        const route = '/invalid_route';
+    test("Check if matches ErrorComponent Snapshot", () => {
+        const route = '/404';
         const errorObj = {
             response: {
                 data: {

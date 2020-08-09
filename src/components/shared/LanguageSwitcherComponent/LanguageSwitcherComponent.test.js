@@ -35,42 +35,42 @@ function rendererWithRouter(
 }
 
 describe('LanguageSwitcherComponent', () => {
-    test('Check if LanguageSwitcherComponent Renders', async () => {
+    test('Check if LanguageSwitcherComponent Renders on /home', async () => {
         const route = '/home';
         renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HeaderContainer></HeaderContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("languageSwitcherComponent")
         expect(lazyElement).toBeInTheDocument()
     })
 
-    test('Check if LanguageSwitcherComponent Renders', async () => {
+    test('Check if LanguageSwitcherComponent Renders on /articles', async () => {
         const route = '/articles';
         renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HeaderContainer></HeaderContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("languageSwitcherComponent")
         expect(lazyElement).toBeInTheDocument()
     })
 
-    test('Check if LanguageSwitcherComponent Renders', async () => {
+    test('Check if LanguageSwitcherComponent Renders on /articles/fa9519d5-0363-4b8d-8e1f-627d802c08a8', async () => {
         const route = '/articles/fa9519d5-0363-4b8d-8e1f-627d802c08a8';
         renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HeaderContainer></HeaderContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("languageSwitcherComponent")
         expect(lazyElement).toBeInTheDocument()
     })
 
-    test('Check if LanguageSwitcherComponent Renders', async () => {
+    test('Check if LanguageSwitcherComponent Renders on /articles/invalid_item', async () => {
         const route = '/articles/invalid_item';
         renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HeaderContainer></HeaderContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("languageSwitcherComponent")
         expect(lazyElement).toBeInTheDocument()
     })
 
-    test('Check if LanguageSwitcherComponent Renders', async () => {
+    test('Check if LanguageSwitcherComponent Renders on /', async () => {
         const route = '/';
         renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HeaderContainer></HeaderContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("languageSwitcherComponent")
         expect(lazyElement).toBeInTheDocument()
     })
 
-    it("Check if matches LanguageSwitcherComponent Snapshot", async () => {
+    test("Check if matches LanguageSwitcherComponent Snapshot", async () => {
         const route = '/';
         const availableLanguages = [{"abbr": "EN", "locale": "en", "label": "English", "region": "US"},{"abbr": "PL", "locale": "pl", "label": "Polish", "region": "PL"}];
         const selectedLanguage = {"abbr": "EN", "locale": "en", "label": "English", "region": "US"};
