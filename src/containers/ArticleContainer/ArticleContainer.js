@@ -17,6 +17,9 @@ function ArticleContainer({ resetError, fetchArticle, fetchAllArticles, article 
     const errorBoundaryRef = useRef(null);
 
     useEffect(() => {
+        /**
+         * When ever the url changes, clear the error 
+         */
         return history.listen((location) => {
             resetError();
         })

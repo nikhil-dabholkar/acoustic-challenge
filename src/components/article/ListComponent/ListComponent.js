@@ -21,6 +21,9 @@ function ListComponent({ fetchAllArticles, allArticles, error, loading, intl }) 
     }, [intl]);
 
     useEffect(() => {
+        /**
+         * Calls this action on first time load
+         */
         fetchAllArticles();
     }, []);
 

@@ -1,6 +1,9 @@
 import { LOAD_ARTICLE_DETAILS_DATA, LOAD_ALL_ARTICLES_DATA, ERROR_LOAD_DATA, ERROR_LOAD_ALL_ARTICLES_DATA, LOADING_DATA, RESET_ERROR } from '../constants/constants';
 const axios = require('axios');
 
+/**
+ * This action will be called when user selects an article from the grid 
+ */
 export const fetchSelectedArticleData = (articleId) => {
     return async (dispatch) => {
         try {
@@ -16,6 +19,9 @@ export const fetchSelectedArticleData = (articleId) => {
     }
 }
 
+/**
+ * This action will be called when user lands on the listing page 
+ */
 export const fetchAllArticlesData = () => {
     return async (dispatch) => {
         try {
@@ -31,6 +37,9 @@ export const fetchAllArticlesData = () => {
     }
 }
 
+/**
+ * This action will be called for clearing the error boundary 
+ */
 export const resetArticlesError = () => {
     return async (dispatch) => {
         dispatch({
@@ -39,12 +48,18 @@ export const resetArticlesError = () => {
     }
 }
 
+/**
+ * This action will be called for showing API call in progress 
+ */
 const fetchingData = (dispatch) => {
     dispatch({
         type: LOADING_DATA
     })
 }
 
+/**
+ * This action will be called to show API call failed 
+ */
 const errorFetchingData = (errorObj, dispatch) => {
     dispatch({
         type: ERROR_LOAD_DATA,
