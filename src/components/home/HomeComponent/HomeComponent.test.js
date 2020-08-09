@@ -37,14 +37,14 @@ function rendererWithRouter(
 describe('HomeComponent', () => {
     test('Check if HomeComponent Renders on /home', async () => {
         const route = '/home';
-        renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HomeContainer></HomeContainer></IntlProvider></Provider>, { route })
+        renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HomeContainer><HomeComponent></HomeComponent></HomeContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("homeComponent")
         expect(lazyElement).toBeInTheDocument()
     })
 
     test('Check if HomeComponent Renders on /', async () => {
         const route = '/';
-        renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HomeContainer></HomeContainer></IntlProvider></Provider>, { route })
+        renderWithRouter(<Provider store={store}><IntlProvider locale="en" messages={en_US}><HomeContainer><HomeComponent></HomeComponent></HomeContainer></IntlProvider></Provider>, { route })
         const lazyElement = await screen.findByTestId("homeComponent")
         expect(lazyElement).toBeInTheDocument()
     })

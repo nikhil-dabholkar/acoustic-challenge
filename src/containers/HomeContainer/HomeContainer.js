@@ -5,12 +5,10 @@ import { LoadingComponent } from '../../components/index';
 const HomeComponent = lazy(() => import("../../components/home/HomeComponent/HomeComponent"));
 // import {HomeComponent} from '../../components/index';
 
-function HomeContainer() {
+function HomeContainer({children}) {
     return (<React.Fragment>
         <div data-testid="homeContainer">
-            <Suspense fallback={<LoadingComponent />}>
-                <HomeComponent></HomeComponent>
-            </Suspense>
+            {children}
         </div>
     </React.Fragment>
     );
