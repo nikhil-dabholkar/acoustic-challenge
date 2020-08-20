@@ -1,21 +1,21 @@
-import { SELECT_LANGUAGE_PREFERENCE } from '../constants/constants';
+import { SELECT_LANGUAGE_PREFERENCE } from '../constants/constants'
 
 /**
  * Stores all the available languages and current selected language
  */
 
 const initialState = {
-    selectedLanguage: {"abbr": "EN", "locale": "en", "label": "English", "region": "US"},
-    allLanguages: [{"abbr": "EN", "locale": "en", "label": "English", "region": "US"},{"abbr": "PL", "locale": "pl", "label": "Polish", "region": "PL"}]
-};
-
-function languageReducer(state = initialState, action) {
-    switch(action.type) {
-        case SELECT_LANGUAGE_PREFERENCE: 
-            return {...state, selectedLanguage: action.payload};
-        default: 
-            return state;
-    }
+  selectedLanguage: { abbr: 'EN', locale: 'en', label: 'English', region: 'US' },
+  allLanguages: [{ abbr: 'EN', locale: 'en', label: 'English', region: 'US' }, { abbr: 'PL', locale: 'pl', label: 'Polish', region: 'PL' }]
 }
 
-export default languageReducer;
+function languageReducer (state = initialState, action) {
+  switch (action.type) {
+    case SELECT_LANGUAGE_PREFERENCE:
+      return { ...state, selectedLanguage: action.payload }
+    default:
+      return state
+  }
+}
+
+export default languageReducer

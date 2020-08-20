@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux';
-import articleReducer from './articleReducer';
-import languageReducer from './languageReducer';
+import { combineReducers } from 'redux'
+import articleReducer from './articleReducer'
+import languageReducer from './languageReducer'
 
 const rootReducer = combineReducers({
-    articleReducer,
-    languageReducer
-});
+  articleReducer,
+  languageReducer
+})
 
-export default rootReducer;
+export default rootReducer
