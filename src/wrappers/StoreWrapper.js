@@ -1,12 +1,17 @@
-import React from 'react';
-import { store } from "../store/store";
-import { Provider } from 'react-redux';
-function StoreWrapper(props) {
-    return (
-        <Provider store={store}>
-            {props.children}
-        </Provider>
-    );
+import React from 'react'
+import { store } from '../store/store'
+import { Provider } from 'react-redux'
+import PropTypes from 'prop-types'
+function StoreWrapper (props) {
+  return (
+    <Provider store={store}>
+      {props.children}
+    </Provider>
+  )
 }
 
-export default StoreWrapper;
+StoreWrapper.propTypes = {
+  children: PropTypes.node.isRequired
+}
+
+export default StoreWrapper
